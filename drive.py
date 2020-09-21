@@ -57,7 +57,6 @@ if __name__ == '__main__':
 
                                 if i['name']==sys.argv[1]+".xlsx":
                                     download(i['id'],service,i['name'])
-                                    break
-                            break            
+                                    break            
     else:
         print("Please, need argument")
