@@ -36,12 +36,13 @@ def connect():
     service = build('drive', 'v3', credentials=creds)
 
     # Call the Drive v3 API
-    results = service.files().list(pageSize=10, fields="nextPageToken, files(id, name)").execute()
+    query="'1iC8Prfo5J2mbuv7fAnVg0a3OQk7v8pOW' in parents"
+    results = service.files().list(q=query, spaces='drive',fields="nextPageToken, files(id, name,parents)").execute()
     items = results.get('files', [])
 
     if not items:
         print('No files found.')
     else:
-        print("Files founds")
+        print("Buscando en NGS")
         return  [items,service]
        
