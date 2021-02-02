@@ -43,6 +43,5 @@ def connect():
     if not items:
         print('No files found.')
     else:
-        print("Buscando en NGS")
         return  [items,service]
        
